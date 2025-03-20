@@ -1,7 +1,9 @@
 import React from 'react'
+import './styles.css'
 
 
-function ProductCard(image, description, price) {
+
+function ProductCard({image, description, price}) {
   return (
 <div className="product-card">
       <img src={image} alt={description} />

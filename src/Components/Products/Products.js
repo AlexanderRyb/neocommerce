@@ -5,7 +5,7 @@ import ProductCard from '../ProductCard/ProductCard'
 
 export default function Products() {
   return (
-    <div>
+    <div className='product-grid'>
           {productList.map(product => (
         <ProductCard 
           key={product.id}
