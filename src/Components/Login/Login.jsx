@@ -4,7 +4,7 @@ import { useAuth } from "../../Context/CommerceContext";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, signup } = useAuth();
+  const { login, signup, logout, user } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +33,15 @@ const Login = () => {
     }
   };
 
+  if (user) {
+    return (
+      <div>
+        <h1>Welcome, {user.email}!</h1>
+        <button onClick={logout}>Logout</button>
+
+      </div>
+    );
+  }
   return (
     <form onSubmit={handleSubmit}>
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />

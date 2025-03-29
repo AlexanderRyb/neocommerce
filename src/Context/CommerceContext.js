@@ -33,19 +33,17 @@ export const CommerceProvider = ({ children }) => {
     }
   };
 
+  
   const logout = async () => {
-    await signOut(auth);
-    localStorage.removeItem("user");
-    setUser(null);
+    try {
+      await signOut(auth);
+      localStorage.removeItem("user");  // Clear stored user data
+      setUser(null);
+      console.log("User signed out successfully");
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
   };
-  if (user) {
-    return (
-      <div>
-        <h1>Welcome, {user.email}!</h1>
-        {/* You can add more user page content here */}
-      </div>
-    );
-  }
   return (
     <CommerceContext.Provider value={{ user, login, signup, logout }}>
       {children}
