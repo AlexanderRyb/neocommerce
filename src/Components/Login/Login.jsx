@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useAuth } from "../../Context/CommerceContext"; 
-
+import { useContextStore } from "../../Context/CommerceContext"; 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { login, signup, logout, user } = useAuth();
+  const [password, setPassword] = useState("");  
+  const { login, signup, logout, user } = useContextStore();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +12,7 @@ const Login = () => {
   
     if (!email || !password) {
       console.error("Missing email or password");
-      return;  // Don't continue if email or password is missing
+      return;  
     }
   
     try {

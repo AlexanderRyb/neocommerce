@@ -117,4 +117,4 @@ export const CommerceProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => useContext(CommerceContext);
+export const useContextStore = () => useContext(CommerceContext);

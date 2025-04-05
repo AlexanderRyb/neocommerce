@@ -1,9 +1,28 @@
 import React from 'react'
+import './styles.css'
+import { useContextStore } from "../../Context/CommerceContext"; 
 
-function Wishlist() {
+
+const Wishlist = () => {
+  const { wishlist } = useContextStore();
+
+  if (wishlist.length === 0) {
+    return <p>Your wishlist is empty.</p>;
+  }
+
   return (
-    <div>Wishlist</div>
-  )
-}
+    <div className="wishlist-view">
+      {wishlist.map((item, index) => (
+        <div key={index} className="wishlist-item">
+          <img src={item.image} alt={item.description} className="wishlist-img" />
+          <div className="wishlist-details">
+            <p>{item.description}</p>
+            <p>${item.price}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default Wishlist
+export default Wishlist;
