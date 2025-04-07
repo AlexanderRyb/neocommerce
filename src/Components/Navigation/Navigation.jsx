@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './styles.css'
-
+import { User } from "lucide-react";
 function Navigation() {
   return (
 
     <nav className="nav-container">
     <div className="nav-group">
-      <Link to="/login" className="nav-link">Login</Link>
+      <Link to="/login" className="nav-link">
+      <User></User>
+      
+      </Link>
     </div>
     
     <div className="nav-group">

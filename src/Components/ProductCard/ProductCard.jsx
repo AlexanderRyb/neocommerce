@@ -1,12 +1,14 @@
 import React from 'react'
 import './styles.css'
-
-
+import { ShoppingCart, Heart } from 'lucide-react';
 import { useContextStore } from "../../Context/CommerceContext"; 
+
 
 
 const ProductCard = ({ image, description, price }) => {
   const { cart, setCart, wishlist, setWishlist, updateUserData, user } = useContextStore();
+
+  const product = { image, description, price };
 
   const handleAddToCart = async () => {
     if (!user) {
@@ -14,21 +16,34 @@ const ProductCard = ({ image, description, price }) => {
       return;
     }
 
-    const newProduct = { image, description, price };
-    const updatedCart = [...cart, newProduct];
+    let updatedCart;
+    if (cart.some(item => item.description === product.description)) {
+      // Remove item from cart if already added
+      updatedCart = cart.filter(item => item.description !== product.description);
+    } else {
+      // Add item to cart if not already there
+      updatedCart = [...cart, product];
+    }
+
     setCart(updatedCart);
-    console.log("added to cart")
     await updateUserData("cart", updatedCart);
   };
 
-  
   const handleAddToWishlist = async () => {
     if (!user) {
       alert("Please log in to add items to your wishlist.");
       return;
     }
-    const newWishlistProduct = { image, description, price };
-    const updatedWishlist = [...wishlist, newWishlistProduct];
+
+    let updatedWishlist;
+    if (wishlist.some(item => item.description === product.description)) {
+      // Remove item from wishlist if already added
+      updatedWishlist = wishlist.filter(item => item.description !== product.description);
+    } else {
+      // Add item to wishlist if not already there
+      updatedWishlist = [...wishlist, product];
+    }
+
     setWishlist(updatedWishlist);
     await updateUserData("wishlist", updatedWishlist);
   };
@@ -37,10 +52,18 @@ const ProductCard = ({ image, description, price }) => {
     <div className="product-card">
       <img src={image} alt={description} />
       <h3>{description}</h3>
-      <p>{price}</p>
-      <button onClick={handleAddToCart}>Add to Cart</button>
-      <button onClick={handleAddToWishlist}>Add to Wishlist</button>
-
+      <p>${price}</p>
+      
+      <button onClick={handleAddToCart}>
+        {cart.some(item => item.description === product.description)
+          ? <ShoppingCart/>
+          : <ShoppingCart/>}
+      </button>
+      <button onClick={handleAddToWishlist}>
+        {wishlist.some(item => item.description === product.description)
+          ? <Heart/>
+          : <Heart/>}
+      </button>
     </div>
   );
 };
