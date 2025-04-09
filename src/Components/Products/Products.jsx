@@ -1,13 +1,17 @@
 import React from 'react'
 import './styles.css'
-import productList from './productList.json'
+import { useSearch } from "../../Context/SearchContext";
 import ProductCard from '../ProductCard/ProductCard'
 
 export default function Products() {
+
+  const { filteredProducts } = useSearch();
+
   return (
     <div className='product-grid'>
-          {productList.map(product => (
-        <ProductCard 
+     
+     {filteredProducts.map(product => (
+        <ProductCard
           key={product.id}
           description={product.description}
           price={product.price}

@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false react-scripts start",
+    "start": "cross-env GENERATE_SOURCEMAP=false react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,9 +41,12 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "source-map-loader": "^5.0.0"
   },
   "jest": {
-  "coveragePathIgnorePatterns": ["/node_modules/"]
-}
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
 }

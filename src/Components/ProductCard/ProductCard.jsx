@@ -4,7 +4,6 @@ import { ShoppingCart, Heart } from 'lucide-react';
 import { useContextStore } from "../../Context/CommerceContext"; 
 
 
-
 const ProductCard = ({ image, description, price }) => {
   const { cart, setCart, wishlist, setWishlist, updateUserData, user } = useContextStore();
 

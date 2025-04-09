@@ -6,11 +6,14 @@ import Wishlist from './Components/Wishlist/Wishlist';
 import Login from './Components/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './Components/Layout';
+import { SearchProvider } from "./Context/SearchContext";
+
 
 function App() {
   return (
-    <CommerceProvider>
+    <SearchProvider>
 
+    <CommerceProvider>
     <BrowserRouter>
     <Routes>
       <Route element={<Layout />} >
@@ -25,6 +28,8 @@ function App() {
     </Routes>
   </BrowserRouter>
   </CommerceProvider>
+  </SearchProvider>
+
 
 
    

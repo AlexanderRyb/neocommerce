@@ -2,7 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './styles.css'
 import { User } from "lucide-react";
+import { useState } from 'react';
+import Searchbar from './Searchbar';
+import { useSearch } from "../../Context/SearchContext";
+
+
+
+
 function Navigation() {
+  const { handleSearch } = useSearch();
+
   return (
 
     <nav className="nav-container">
@@ -11,6 +20,10 @@ function Navigation() {
       <User></User>
       
       </Link>
+    </div>
+    <div className="search-group">
+    <Searchbar onSearch={handleSearch} />
+
     </div>
     
     <div className="nav-group">
