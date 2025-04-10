@@ -10,7 +10,7 @@ import { useSearch } from "../../Context/SearchContext";
 
 
 function Navigation() {
-  const { handleSearch } = useSearch();
+  const { setSearchTerm } = useSearch();
 
   return (
 
@@ -22,7 +22,7 @@ function Navigation() {
       </Link>
     </div>
     <div className="search-group">
-    <Searchbar onSearch={handleSearch} />
+    <Searchbar onSearch={setSearchTerm} />
 
     </div>
     
