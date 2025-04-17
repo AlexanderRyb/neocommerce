@@ -8,7 +8,6 @@ export const SearchProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [minPrice, setMinPrice] = useState(0);
-
   const [maxPrice, setMaxPrice] = useState(Infinity);
 
   const [filteredProducts, setFilteredProducts] = useState(productList);

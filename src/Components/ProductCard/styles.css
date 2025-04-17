@@ -43,3 +43,8 @@
   .product-card button:hover {
     background: #3567d6;
   }
+  .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }

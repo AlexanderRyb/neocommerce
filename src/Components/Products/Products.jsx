@@ -12,8 +12,19 @@ export default function Products() {
 
   
   return (
-    <div className='product-grid'>
-        <div className="price-filter">
+    <div className='products-component-container'>
+       
+    
+      <div className='categories-row'>
+      {categories.map((cat) => (
+        <button key={cat} onClick={() => setSelectedCategory(cat)}>
+          {cat}
+        </button>
+      ))}
+      </div>
+     
+      <div className='main-content-row'>
+    <div className="price-filter">
       <input
         type="number"
         placeholder="Min price"
@@ -25,18 +36,9 @@ export default function Products() {
         onChange={(e) => setMaxPrice(Number(e.target.value))}
       />
     </div>
-    
-      <div className='categories-row'>
-      {categories.map((cat) => (
-        <button key={cat} onClick={() => setSelectedCategory(cat)}>
-          {cat}
-        </button>
-      ))}
-      </div>
-     
-   
-     
-     {filteredProducts.map(product => (
+
+    <div className='products-grid'>
+   {filteredProducts.map(product => (
         <ProductCard
           key={product.id}
           description={product.description}
@@ -44,6 +46,13 @@ export default function Products() {
           image={product.image}
         />
       ))}
+   </div> 
+
+
+
+    </div>
+      
+    
     </div>
   )
 }

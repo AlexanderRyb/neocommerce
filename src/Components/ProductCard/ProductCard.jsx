@@ -52,7 +52,7 @@ const ProductCard = ({ image, description, price }) => {
       <img src={image} alt={description} />
       <h3>{description}</h3>
       <p>${price}</p>
-      
+      <div className='buttons'>
       <button onClick={handleAddToCart}>
         {cart.some(item => item.description === product.description)
           ? <ShoppingCart/>
@@ -63,6 +63,11 @@ const ProductCard = ({ image, description, price }) => {
           ? <Heart/>
           : <Heart/>}
       </button>
+
+
+      </div>
+      
+     
     </div>
   );
 };
