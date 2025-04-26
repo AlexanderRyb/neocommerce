@@ -54,14 +54,17 @@ const ProductCard = ({ image, description, price }) => {
       <p>${price}</p>
       <div className='buttons'>
       <button onClick={handleAddToCart}>
-        {cart.some(item => item.description === product.description)
-          ? <ShoppingCart/>
-          : <ShoppingCart/>}
+           <ShoppingCart
+               className={cart.some(item => item.description === product.description) ? "in-cart" : "not-in-cart"}
+
+           />
       </button>
       <button onClick={handleAddToWishlist}>
-        {wishlist.some(item => item.description === product.description)
-          ? <Heart/>
-          : <Heart/>}
+           <Heart           
+           className={wishlist.some(item => item.description === product.description) ? "in-wishlist" : "not-in-wishlist"}
+    fill={wishlist.some(item => item.description === product.description) ? "red" : "none"}
+    
+           />
       </button>
 
 
