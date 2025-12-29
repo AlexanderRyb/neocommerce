@@ -4,11 +4,11 @@
 
 }
 .main-content-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 10px; 
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
   width: 100%;
+  align-items: start;
 }
 .products-grid {
     display: flex;
@@ -49,4 +49,18 @@
     border-radius: 0.5rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
-  
+  .product-card {
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card .description {
+  flex: 1;
+  overflow: hidden;
+}
