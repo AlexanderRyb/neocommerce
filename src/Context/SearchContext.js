@@ -8,7 +8,7 @@ export const SearchProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(Infinity);
+  const [maxPrice, setMaxPrice] = useState(100000);
 
   const [filteredProducts, setFilteredProducts] = useState(productList);
   useEffect(() => {
@@ -40,6 +40,8 @@ export const SearchProvider = ({ children }) => {
         setSelectedCategory,
         setMinPrice,
         setMaxPrice,
+        minPrice,
+        maxPrice,
         
       }}
     >
