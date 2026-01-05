@@ -1,76 +1,81 @@
 .product-card {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    align-items: center;
-    text-align: center;
-  }
-  
-  .product-card img {
-    width: 80%;
-    height: 180px;
-    object-fit: cover;
-    margin: 10px 0;
-    border-radius: 4px;
-  }  
-  .product-card h3 {
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 10px;
-    align-items: center;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: stretch;
+}
+.product-card img,
+.product-card h3 {
+  align-self: center;
+}
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product-card img {
+  width: 80%;
+  height: 50%;
+  object-fit: fill;
+  border-radius: 4px;
+}
+.product-card h3 {
+  margin: auto;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  align-items: center;
   justify-content: center;
-  }
-    .product-card p {    
-    font-weight: bold;
-    margin: 0 0 15px;
+  min-height: 3em;
+}
 
-  }
-  .cart-button{
-    background-color: red;
-  }
-  
-  .product-card button {
-    margin-top: auto;
-    padding: 8px;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: white;
+.card-footer .price {
+  margin: 0;
+  font-weight: bold;
+}
+.cart-button {
+  background-color: red;
+}
 
-  }
-.buttons{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    
-    gap: 0.5rem;
-    align-items: flex-end;
-  }
-.not-in-cart{
-    padding: 6px;
-    border-radius: 5px;
-    background-color: red; 
-
-  }
+.product-card button {
+  margin-top: auto;
+  padding: 8px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+}
+.buttons {
+  display: flex;
+  justify-content: start;
+  margin-top: auto;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+.not-in-cart {
+  padding: 6px;
+  border-radius: 5px;
+  background-color: red;
+}
 .not-in-cart:hover {
-    background-color: #f06060; 
- }
-.in-wishlist{
-color:red
-
+  background-color: #f06060;
 }
-.not-in-wishlist{
-  color:black;
-  
-  }
+.in-wishlist {
+  color: red;
+}
+.not-in-wishlist {
+  color: black;
+}
 .not-in-wishlist:hover {
-  color:red
+  color: red;
 }
-    
-  
- 

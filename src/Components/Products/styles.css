@@ -36,7 +36,12 @@
     border-radius: 6px;
     background-color: #f9f9f9;
     cursor: pointer;
-    transition: all 0.2s ease;
+    
+  }
+  .categories-row button:hover {
+    background-color: #e0e0e0;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+
   }
   .price-filter {
     display: flex;
