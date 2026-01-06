@@ -12,18 +12,15 @@ function Navigation() {
   return (
 
     <nav className="nav-container">
+        
+    <div className="search-group">
+    <Searchbar onSearch={setSearchTerm} />      
+    </div>
+
     <div className="nav-group">
       <Link to="/login" className="nav-link">
-      <User></User>
-      
+      <User></User>      
       </Link>
-    </div>
-    <div className="search-group">
-    <Searchbar onSearch={setSearchTerm} />
-
-    </div>
-    
-    <div className="nav-group">
       <Link to="/" className="nav-link">Products</Link>
       <Link to="/cart" className="nav-link">Cart</Link>
       <Link to="/wishlist" className="nav-link">Wishlist</Link>

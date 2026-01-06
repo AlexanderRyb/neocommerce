@@ -9,6 +9,9 @@
   text-align: center;
   align-items: stretch;
 }
+.product-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 .product-card img,
 .product-card h3 {
   align-self: center;

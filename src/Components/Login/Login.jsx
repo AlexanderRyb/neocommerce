@@ -1,54 +1,95 @@
 import { useState } from "react";
-import { useContextStore } from "../../Context/CommerceContext"; 
+import { useContextStore } from "../../Context/CommerceContext";
+import "./styles.css"
+
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");  
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const [mode, setMode] = useState("register"); // "register" | "login"
+
   const { login, signup, logout, user } = useContextStore();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email); // Log email value
-    console.log("Password:", password); // Log password value
-  
-    if (!email || !password) {
-      console.error("Missing email or password");
-      return;  
-    }
-  
+
+    if (!email || !password) return;
+
     try {
-      await login(email, password);
+      if (mode === "login") {
+        await login(email, password);
+      } else {
+        if (password !== repeatPassword) return;
+        await signup(email, password);
+      }
     } catch (error) {
-      console.error("Login failed", error);
-    }
-  };
-  
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    try {
-      await signup(email, password);
-      console.log("Signup successful");
-    } catch (error) {
-      console.error("Signup failed", error);
+      console.error("Auth failed", error);
     }
   };
 
   if (user) {
     return (
-      <div>
-        <h1>Welcome, {user.email}!</h1>
-        <button onClick={logout}>Logout</button>
-
+      <div className="auth-page">
+        <div className="auth-card">
+          <h2>Welcome, {user.email}</h2>
+          <button onClick={logout}>Logout</button>
+        </div>
       </div>
     );
   }
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      <button type="submit">Login</button>
-      <button type="button" onClick={handleSignup}>Sign Up</button>
 
-    </form>
+  return (
+    <div className="auth-page">
+      <form className="auth-card" onSubmit={handleSubmit}>
+        <h2>{mode === "register" ? "Register" : "Login"}</h2>
+
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        {mode === "register" && (
+          <input
+            type="password"
+            placeholder="Repeat password"
+            value={repeatPassword}
+            onChange={(e) => setRepeatPassword(e.target.value)}
+            required
+          />
+        )}
+
+        <button type="submit">
+          {mode === "register" ? "Register" : "Login"}
+        </button>
+
+        <div className="auth-switch">
+          <p>
+            {mode === "register"
+              ? "Already have an account?"
+              : "Don't have an account?"}
+          </p>
+          <button
+            type="button"
+            onClick={() =>
+              setMode(mode === "register" ? "login" : "register")
+            }
+          >
+            {mode === "register" ? "Log in" : "Register"}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

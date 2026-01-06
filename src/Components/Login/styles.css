@@ -1,0 +1,39 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 320px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.auth-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.auth-card input {
+  padding: 0.6rem;
+}
+
+.auth-switch {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.auth-switch button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+}
