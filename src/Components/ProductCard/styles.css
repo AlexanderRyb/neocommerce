@@ -8,13 +8,18 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   align-items: stretch;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 .product-card:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.06);
+
 }
 .product-card img,
 .product-card h3 {
   align-self: center;
+  padding-top: 30px;
 }
 .card-footer {
   margin-top: auto;
@@ -69,6 +74,13 @@
   padding: 6px;
   border-radius: 5px;
   background-color: red;
+}
+.in-cart{
+  background-color: rgb(242, 242, 242);
+  color: rgb(102, 183, 221);
+  padding: 6px;
+
+
 }
 .not-in-cart:hover {
   background-color: #f06060;

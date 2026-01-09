@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { ShoppingCart, Heart } from "lucide-react";
+import { ShoppingCart, Heart, CircleCheck } from "lucide-react";
 import { useContextStore } from "../../Context/CommerceContext";
 
 const ProductCard = ({ image, description, price }) => {
@@ -60,14 +60,12 @@ const ProductCard = ({ image, description, price }) => {
 
         <div className="buttons">
           <button onClick={handleAddToCart}>
-            <ShoppingCart
-              className={
-                cart.some((item) => item.description === product.description)
-                  ? "in-cart"
-                  : "not-in-cart"
-              }
-            />
-          </button>
+  {cart.some(item => item.description === product.description) ? (
+    <CircleCheck className="in-cart" />
+  ) : (
+    <ShoppingCart className="not-in-cart" />
+  )}
+</button>
           <button onClick={handleAddToWishlist}>
             <Heart
               className={
