@@ -14,7 +14,7 @@ function App() {
     <SearchProvider>
 
     <CommerceProvider>
-    <BrowserRouter>
+    <BrowserRouter basename="/neocommerce">
     <Routes>
       <Route element={<Layout />} >
       <Route path="/" element={<Products />} />
