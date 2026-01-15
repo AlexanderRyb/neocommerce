@@ -5,6 +5,8 @@ import Cart from './Components/Cart/Cart';
 import Wishlist from './Components/Wishlist/Wishlist';
 import Login from './Components/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter } from "react-router-dom";
+
 import Layout from './Components/Layout';
 import { SearchProvider } from "./Context/SearchContext";
 
@@ -14,7 +16,7 @@ function App() {
     <SearchProvider>
 
     <CommerceProvider>
-   <BrowserRouter basename="/neocommerce">
+<HashRouter>
   <Routes>
     <Route element={<Layout />}>
       <Route index element={<Products />} />
@@ -23,7 +25,7 @@ function App() {
       <Route path="wishlist" element={<Wishlist />} />
     </Route>
   </Routes>
-</BrowserRouter>
+</HashRouter>
 
   </CommerceProvider>
   </SearchProvider>
