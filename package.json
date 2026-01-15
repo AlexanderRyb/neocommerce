@@ -2,7 +2,7 @@
   "name": "neo_commerce",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexanderryb.github.io/neocommerce/",
+  "homepage": "https://alexanderryb.github.io/neocommerce",
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@testing-library/dom": "^10.4.0",
