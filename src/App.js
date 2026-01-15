@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter basename="/neocommerce">
     <Routes>
       <Route element={<Layout />} >
-      <Route path="/" element={<Products />} />
+  <Route index element={<Products />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Cart" element={<Cart />} />
       <Route path="/Wishlist" element={<Wishlist />} />
