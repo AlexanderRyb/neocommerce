@@ -14,19 +14,17 @@ function App() {
     <SearchProvider>
 
     <CommerceProvider>
-    <BrowserRouter basename="/neocommerce">
-    <Routes>
-      <Route element={<Layout />} >
-  <Route index element={<Products />} />
-      <Route path="/Login" element={<Login />} />
-      <Route path="/Cart" element={<Cart />} />
-      <Route path="/Wishlist" element={<Wishlist />} />
+   <BrowserRouter basename="/neocommerce">
+  <Routes>
+    <Route element={<Layout />}>
+      <Route index element={<Products />} />
+      <Route path="login" element={<Login />} />
+      <Route path="cart" element={<Cart />} />
+      <Route path="wishlist" element={<Wishlist />} />
+    </Route>
+  </Routes>
+</BrowserRouter>
 
-
-
-      </Route>
-    </Routes>
-  </BrowserRouter>
   </CommerceProvider>
   </SearchProvider>
 
