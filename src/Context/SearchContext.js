@@ -1,48 +1,69 @@
-import { createContext, useContext, useState,useEffect  } from "react";
-import  productList from "./productList.json";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const SearchContext = createContext();
 
+const API_URL = "https://YOUR_RENDER_URL/products";
 
 export const SearchProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(100000);
+  const [maxPrice, setMaxPrice] = useState(Infinity);
 
-  const [filteredProducts, setFilteredProducts] = useState(productList);
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  // 1. Fetch from backend when server-side filters change
   useEffect(() => {
-    let filtered = productList;
-  
-    if (searchTerm) {
-      filtered = filtered.filter(product =>
-        product.description.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-  
+    const params = new URLSearchParams();
+
     if (selectedCategory !== "all") {
-      filtered = filtered.filter(product => product.category === selectedCategory);
+      params.append("category", selectedCategory);
     }
-  
-    filtered = filtered.filter(product =>
-      product.price >= minPrice && product.price <= maxPrice
+    if (minPrice !== null) params.append("min", minPrice);
+    if (maxPrice !== null && maxPrice !== Infinity) {
+      params.append("max", maxPrice);
+    }
+
+    fetch(`${API_URL}?${params.toString()}`)
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data);
+        setFilteredProducts(data);
+      })
+      .catch(console.error);
+  }, [selectedCategory, minPrice, maxPrice]);
+
+  // 2. Client-side text search only
+  useEffect(() => {
+    if (!searchTerm) {
+      setFilteredProducts(products);
+      return;
+    }
+
+    const filtered = products.filter(product =>
+      product.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  
+
     setFilteredProducts(filtered);
-  }, [searchTerm, selectedCategory, minPrice, maxPrice]);
-  
+  }, [searchTerm, products]);
 
   return (
     <SearchContext.Provider
       value={{
         filteredProducts,
+
+        searchTerm,
         setSearchTerm,
+
+        selectedCategory,
         setSelectedCategory,
-        setMinPrice,
-        setMaxPrice,
+
         minPrice,
+        setMinPrice,
+
         maxPrice,
-        
+        setMaxPrice,
       }}
     >
       {children}

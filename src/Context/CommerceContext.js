@@ -6,7 +6,6 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 
-// REALTIME DATABASE IMPORTS
 import { getDatabase, ref, set, get, update } from "firebase/database"; // Changed!
 
 import { auth } from "../config/firebase";
@@ -24,11 +23,10 @@ export const CommerceProvider = ({ children }) => {
       if (currentUser) {
         setUser(currentUser);
         try {
-          //REALTIME DATABASE USAGE
           const userRef = ref(getDatabase(), `users/${currentUser.uid}`); 
           const snapshot = await get(userRef); 
           if (snapshot.exists()) {
-            const userData = snapshot.val(); // Access data with .val()
+            const userData = snapshot.val(); 
             setCart(userData.cart || []);
             setWishlist(userData.wishlist || []);
             setHistory(userData.history || []);
