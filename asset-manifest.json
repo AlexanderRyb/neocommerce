@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/neocommerce/static/css/main.2a0abb30.css",
-    "main.js": "/neocommerce/static/js/main.53be5e48.js",
+    "main.js": "/neocommerce/static/js/main.8e33bc37.js",
     "index.html": "/neocommerce/index.html",
     "main.2a0abb30.css.map": "/neocommerce/static/css/main.2a0abb30.css.map",
-    "main.53be5e48.js.map": "/neocommerce/static/js/main.53be5e48.js.map"
+    "main.8e33bc37.js.map": "/neocommerce/static/js/main.8e33bc37.js.map"
   },
   "entrypoints": [
     "static/css/main.2a0abb30.css",
-    "static/js/main.53be5e48.js"
+    "static/js/main.8e33bc37.js"
   ]
 }
