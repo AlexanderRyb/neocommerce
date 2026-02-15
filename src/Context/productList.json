@@ -11,7 +11,7 @@
     "id": "2",
     "description": "Mi RedmiBook 14 II R5/16/512/W",
     "price": 6000,
-    "image": "/images/miRedmiBook.jpg",
+    "image": "images/miRedmiBook.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "description": "ARTLINE Gaming X31 (X31v08)",
     "price": 8800,
-    "image": "/images/pc1.jpg",
+    "image": "images/pc1.jpg",
     "category": "PC",
     "quantity": 1
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "description": "Apple iPhone 6 16GB silver",
     "price": 10000,
-    "image": "/images/iphone6.jpg",
+    "image": "images/iphone6.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -35,7 +35,7 @@
     "id": "5",
     "description": "Samsung Galaxy A72 8/256GB Violet",
     "price": 6000,
-    "image": "/images/samsungGalaxy.jpg",
+    "image": "images/samsungGalaxy.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -43,7 +43,7 @@
     "id": "6",
     "description": "Nokia 800 Tough Black",
     "price": 5000,
-    "image": "/images/nokia800.jpg",
+    "image": "images/nokia800.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -51,7 +51,7 @@
     "id": "7",
     "description": "24\" Gazer TV24-HS2G Smart TV Graphite",
     "price": 11999,
-    "image": "/images/gazerTV.jpg",
+    "image": "images/gazerTV.jpg",
     "category": "tv",
     "quantity": 1
   },
@@ -59,7 +59,7 @@
     "id": "8",
     "description": "ARTLINE Gaming X44",
     "price": 12000,
-    "image": "/images/artline44.jpg",
+    "image": "images/artline44.jpg",
     "category": "PC",
     "quantity": 1
   },
@@ -67,7 +67,7 @@
     "id": "9",
     "description": "Philips 58PUS7505",
     "price": 8000,
-    "image": "/images/philips58.jpg",
+    "image": "images/philips58.jpg",
     "category": "tv",
     "quantity": 1
   },
@@ -75,7 +75,7 @@
     "id": "10",
     "description": "Apple iPhone 12 128GB",
     "price": 10000,
-    "image": "/images/iphone12.jpg",
+    "image": "images/iphone12.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -83,7 +83,7 @@
     "id": "11",
     "description": "Sony Xperia XZ2 (H8216)",
     "price": 7000,
-    "image": "/images/sonyXperia.jpg",
+    "image": "images/sonyXperia.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -91,7 +91,7 @@
     "id": "12",
     "description": "Ulefone Armor X5 Pro 4/64Gb ",
     "price": 6000,
-    "image": "/images/ulefone.jpg",
+    "image": "images/ulefone.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -99,7 +99,7 @@
     "id": "13",
     "description": "Huawei Mate 40 Pro 8/256GB",
     "price": 9999,
-    "image": "/images/huaweiMate.jpg",
+    "image": "images/huaweiMate.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -107,7 +107,7 @@
     "id": "14",
     "description": " ARTLINE Overlord X56",
     "price": 14999,
-    "image": "/images/artlineOverlord.jpg",
+    "image": "images/artlineOverlord.jpg",
     "category": "PC",
     "quantity": 1
   },
@@ -115,7 +115,7 @@
     "id": "15",
     "description": " Lenovo 320 AMD (8S5B20P11116)",
     "price": 1399,
-    "image": "/images/lenovo320.jpg",
+    "image": "images/lenovo320.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -123,7 +123,7 @@
     "id": "16",
     "description": "  MacBook Air 13 M1",
     "price": 7999,
-    "image": "/images/appleMac.jpg",
+    "image": "images/appleMac.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -131,7 +131,7 @@
     "id": "17",
     "description": "ASUS M570D",
     "price": 5999,
-    "image": "/images/asusM.jpg",
+    "image": "images/asusM.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -139,7 +139,7 @@
     "id": "18",
     "description": "ARTLINE Gaming X39 ",
     "price": 15999,
-    "image": "/images/artline_gaming.jpg",
+    "image": "images/artline_gaming.jpg",
     "category": "PC",
     "quantity": 1
   },
@@ -147,7 +147,7 @@
     "id": "19",
     "description": "Acer Extensa EX215-31 (NX.EFTEU.01P) Black",
     "price": 9999,
-    "image": "/images/acer_ex.jpg",
+    "image": "images/acer_ex.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -155,7 +155,7 @@
     "id": "20",
     "description": "Acer Spin 5 SP513-54N (NX.HQUEU.00A) Gray",
     "price": 8000,
-    "image": "/images/acer_spin.jpg",
+    "image": "images/acer_spin.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -163,7 +163,7 @@
     "id": "21",
     "description": "Xiaomi Mi 11i 8/256 Cosmic Black (MZB08VGEU)",
     "price": 8999,
-    "image": "/images/xiaomi11.jpg",
+    "image": "images/xiaomi11.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -171,7 +171,7 @@
     "id": "22",
     "description": "75 Xiaomi Mi TV Q1 75 Black",
     "price": 15999,
-    "image": "/images/xiaomitv.jpg",
+    "image": "images/xiaomitv.jpg",
     "category": "tv",
     "quantity": 1
   },
@@ -179,7 +179,7 @@
     "id": "23",
     "description": "32 Samsung UE32T4500AUXUA Smart TV",
     "price": 12999,
-    "image": "/images/samsu.jpg",
+    "image": "images/samsu.jpg",
     "category": "tv",
     "quantity": 1
   },
@@ -187,7 +187,7 @@
     "id": "24",
     "description": "Nokia 3310",
     "price": 2000,
-    "image": "/images/nokia.jpg",
+    "image": "images/nokia.jpg",
     "category": "phone",
     "quantity": 1
   },
@@ -195,7 +195,7 @@
     "id": "25",
     "description": "Apple MacBook Air 2018 Gold",
     "price": 12000,
-    "image": "/images/macBook.jpg",
+    "image": "images/macBook.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -203,7 +203,7 @@
     "id": "26",
     "description": "Dell Vostro 3400",
     "price": 20000,
-    "image": "/images/Vostro.jpg",
+    "image": "images/Vostro.jpg",
     "category": "laptop",
     "quantity": 1
   },
@@ -211,7 +211,7 @@
     "id": "27",
     "description": "Lenovo Tab M10 Plus FHD 4/128GB LTE Iron Grey (ZA5V0111UA)",
     "price": 10500,
-    "image": "/images/lenovotab.jpg",
+    "image": "images/lenovotab.jpg",
     "category": "tablet",
     "quantity": 1
   },
@@ -219,7 +219,7 @@
     "id": "28",
     "description": "Samsung Galaxy Tab S7 FE LTE 4/64Gb Green (SM-T735NLGASEK)",
     "price": 8500,
-    "image": "/images/samTab.jpg",
+    "image": "images/samTab.jpg",
     "category": "tablet",
     "quantity": 1
   },
@@ -227,7 +227,7 @@
     "id": "29",
     "description": "Realme Pad 10.4' 3/32 Wi-Fi Grey",
     "price": 7888,
-    "image": "/images/realmePad.jpg",
+    "image": "images/realmePad.jpg",
     "category": "tablet",
     "quantity": 1
   },
@@ -235,7 +235,7 @@
     "id": "30",
     "description": "Prestigio Node A8 3G PMT4208_3G_E_EU",
     "price": 24999,
-    "image": "/images/prestigio.jpg",
+    "image": "images/prestigio.jpg",
     "category": "tablet",
     "quantity": 1
   },
@@ -243,7 +243,7 @@
     "id": "31",
     "description": "Xiaomi Pad 5 10.9” 6/256GB Cosmic Gray (VHU4088)",
     "price": 15500,
-    "image": "/images/xiaomiTab.jpg",
+    "image": "images/xiaomiTab.jpg",
     "category": "tablet",
     "quantity": 1
   }
