@@ -53,7 +53,7 @@ const ProductCard = ({ image, description, price }) => {
 
   return (
     <div className="product-card">
-      <img  src={`${process.env.PUBLIC_URL}${image}`} alt={description} />
+<img src={`${import.meta.env.BASE_URL}${image}`} alt={description} />
       <h3>{description}</h3>
       <div className="card-footer">
         <p className="price">${price}</p>
