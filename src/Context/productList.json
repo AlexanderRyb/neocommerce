@@ -3,7 +3,7 @@
     "id": 1,
     "description": "Mi Notebook Pro 15 i5/8/512/MX250",
     "price": 23999,
-    "image": "/images/miNotebookPro.jpg",
+    "image": "images/miNotebookPro.jpg",
     "category": "laptop",
     "quantity": 1
   },
