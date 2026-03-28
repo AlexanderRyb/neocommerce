@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const SearchContext = createContext();
 
-const API_URL = "https://n-commerce-server.onrender.com/products";
+const API_URL = "/api/products";
 
 export const SearchProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
