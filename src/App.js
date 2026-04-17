@@ -4,7 +4,7 @@ import Products from './Components/Products/Products';
 import Cart from './Components/Cart/Cart';
 import Wishlist from './Components/Wishlist/Wishlist';
 import Login from './Components/Login/Login';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { HashRouter } from "react-router-dom";
 
 import Layout from './Components/Layout';
