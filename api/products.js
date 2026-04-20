@@ -1,11 +1,8 @@
-// Direct import ensures the data is bundled into the function
-import productsData from "../data/products.json";
+const productsData = require("../data/products.json");
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   try {
     const { q, category, min, max } = req.query;
-    
-    // productsData is already a JS object because of the import
     let results = [...productsData];
 
     if (q) {
@@ -27,7 +24,6 @@ export default function handler(req, res) {
 
     return res.status(200).json(results);
   } catch (error) {
-    console.error("Backend Error:", error);
-    return res.status(500).json({ error: "Server encountered an error processing data." });
+    return res.status(500).json({ error: "Internal Server Error" });
   }
-}
+};
