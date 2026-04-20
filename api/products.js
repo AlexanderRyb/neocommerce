@@ -3,22 +3,29 @@ import fs from 'fs';
 
 export default function handler(req, res) {
   try {
-    // 1. Try to find the file
+    // This moves up from /api to the root, then into /data
     const filePath = path.join(process.cwd(), 'data', 'products.json');
     
-    // 2. Check if file actually exists to avoid a crash
-    if (!fs.existsSync(filePath)) {
-      return res.status(404).json({ error: `File not found at ${filePath}` });
+    // Fallback check: if process.cwd() fails, try relative to __dirname
+    let finalPath = filePath;
+    if (!fs.existsSync(finalPath)) {
+        finalPath = path.join(__dirname, '..', 'data', 'products.json');
     }
 
-    const fileData = fs.readFileSync(filePath, 'utf8');
+    if (!fs.existsSync(finalPath)) {
+      return res.status(404).json({ 
+        error: "File not found",
+        attemptedPath: finalPath 
+      });
+    }
+
+    const fileData = fs.readFileSync(finalPath, 'utf8');
     const products = JSON.parse(fileData);
-
-    // ... (rest of your filtering logic) ...
-
+    
+    // ... your filtering logic ...
     return res.status(200).json(results);
+    
   } catch (error) {
-    // This will show up in your Vercel logs
     return res.status(500).json({ error: error.message });
   }
 }
