@@ -1,7 +1,3 @@
 {
-  "functions": {
-    "api/products.js": {
-      "includeFiles": "data/products.json"
-    }
-  }
+  "version": 2
 }
