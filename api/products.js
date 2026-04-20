@@ -1,7 +1,16 @@
-const productsData = require("../data/products.json");
+const fs = require('fs');
+const path = require('path');
 
 module.exports = (req, res) => {
   try {
+    // This finds the root of your project on Vercel
+    const root = process.cwd();
+    const filePath = path.join(root, 'data', 'products.json');
+
+    // Read the file manually
+    const jsonData = fs.readFileSync(filePath, 'utf8');
+    const productsData = JSON.parse(jsonData);
+
     const { q, category, min, max } = req.query;
     let results = [...productsData];
 
@@ -24,6 +33,11 @@ module.exports = (req, res) => {
 
     return res.status(200).json(results);
   } catch (error) {
-    return res.status(500).json({ error: "Internal Server Error" });
+    // This will help us see the actual error in the Direct Hit
+    return res.status(500).json({ 
+      error: "Invocation Failed", 
+      message: error.message,
+      stack: error.stack
+    });
   }
 };
