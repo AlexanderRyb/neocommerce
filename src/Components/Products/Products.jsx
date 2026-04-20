@@ -61,17 +61,16 @@ const { minPrice, maxPrice, setMinPrice, setMaxPrice } = useSearch();
       
     </div>
 
-    <div className='products-grid'>
-   {filteredProducts.map(product => (
-        <ProductCard
-          key={product.id}
-          description={product.description}
-          price={product.price}
-          image={product.image}
-        />
-      ))}
-   </div> 
-
+ <div className='products-grid'>
+  {Array.isArray(filteredProducts) && filteredProducts.map(product => (
+    <ProductCard
+      key={product.id}
+      description={product.description}
+      price={product.price}
+      image={product.image}
+    />
+  ))}
+</div>
 
 
     </div>

@@ -3,38 +3,22 @@ import fs from 'fs';
 
 export default function handler(req, res) {
   try {
-    // This looks for the file starting from the project root
+    // 1. Try to find the file
     const filePath = path.join(process.cwd(), 'data', 'products.json');
+    
+    // 2. Check if file actually exists to avoid a crash
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ error: `File not found at ${filePath}` });
+    }
+
     const fileData = fs.readFileSync(filePath, 'utf8');
     const products = JSON.parse(fileData);
 
-    const { q, category, min, max } = req.query;
-    let results = [...products];
-
-    // search (name)
-    if (q) {
-      const query = q.toLowerCase();
-      results = results.filter(p => p.name.toLowerCase().includes(query));
-    }
-
-    // category
-    if (category && category !== "all") {
-      results = results.filter(p => p.category === category);
-    }
-
-    // min price
-    if (min) {
-      results = results.filter(p => p.price >= Number(min));
-    }
-
-    // max price
-    if (max) {
-      results = results.filter(p => p.price <= Number(max));
-    }
+    // ... (rest of your filtering logic) ...
 
     return res.status(200).json(results);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Failed to load products" });
+    // This will show up in your Vercel logs
+    return res.status(500).json({ error: error.message });
   }
 }
