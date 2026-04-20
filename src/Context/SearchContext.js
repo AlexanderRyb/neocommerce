@@ -8,7 +8,7 @@ export const SearchProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(Infinity);
+  const [maxPrice, setMaxPrice] = useState(1000000);
 
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ export const SearchProvider = ({ children }) => {
     if (searchTerm) params.append("q", searchTerm);
     if (selectedCategory !== "all") params.append("category", selectedCategory);
     if (minPrice !== null) params.append("min", minPrice);
-    if (maxPrice !== Infinity) params.append("max", maxPrice);
+    if (maxPrice !== 1000000) params.append("max", maxPrice);
 
     setLoading(true);
 

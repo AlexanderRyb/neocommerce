@@ -1,23 +1,40 @@
-// Using require for stability in Node environments
-const products = require("../data/products.json");
+import path from 'path';
+import fs from 'fs';
 
 export default function handler(req, res) {
-  const { q, category, min, max } = req.query;
-  let results = [...products];
+  try {
+    // This looks for the file starting from the project root
+    const filePath = path.join(process.cwd(), 'data', 'products.json');
+    const fileData = fs.readFileSync(filePath, 'utf8');
+    const products = JSON.parse(fileData);
 
-  if (q) {
-    const query = q.toLowerCase();
-    results = results.filter(p => p.name.toLowerCase().includes(query));
-  }
-  if (category) {
-    results = results.filter(p => p.category === category);
-  }
-  if (min) {
-    results = results.filter(p => p.price >= Number(min));
-  }
-  if (max) {
-    results = results.filter(p => p.price <= Number(max));
-  }
+    const { q, category, min, max } = req.query;
+    let results = [...products];
 
-  return res.status(200).json(results);
+    // search (name)
+    if (q) {
+      const query = q.toLowerCase();
+      results = results.filter(p => p.name.toLowerCase().includes(query));
+    }
+
+    // category
+    if (category && category !== "all") {
+      results = results.filter(p => p.category === category);
+    }
+
+    // min price
+    if (min) {
+      results = results.filter(p => p.price >= Number(min));
+    }
+
+    // max price
+    if (max) {
+      results = results.filter(p => p.price <= Number(max));
+    }
+
+    return res.status(200).json(results);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Failed to load products" });
+  }
 }
