@@ -104,12 +104,17 @@ input[type="number"] {
 
 .range-slider input[type="range"] {
   position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   pointer-events: none;
 }
 
 .range-slider input[type="range"]::-webkit-slider-thumb {
-  pointer-events: all;
+  pointer-events: auto;
+}
+
+.range-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: auto;
+}
+.range-slider input[type="range"]:first-child {
+  z-index: 2;
 }
