@@ -5,7 +5,7 @@ module.exports = (req, res) => {
   try {
     // This finds the root of your project on Vercel
     const root = process.cwd();
-    const filePath = path.join(root, 'data', 'products.json');
+    const filePath = path.join(root, 'data', 'productList.json');
 
     // Read the file manually
     const jsonData = fs.readFileSync(filePath, 'utf8');
